@@ -9,6 +9,7 @@ const CACHE_VERSION = '1.0.0';
 // Static assets to cache (relative paths for GitHub Pages compatibility)
 const STATIC_ASSETS = [
     './',
+    './index.html',
     './dashboard.html',
     './manifest.json',
     './favicon.ico',
@@ -175,9 +176,9 @@ async function fetchAndCache(request) {
 function fallbackResponse(request) {
     const url = new URL(request.url);
     
-    // Return cached dashboard for navigation requests
+    // Return cached index (login) for navigation requests
     if (request.mode === 'navigate') {
-        return caches.match('./dashboard.html');
+        return caches.match('./index.html');
     }
     
     // Return offline response for other requests

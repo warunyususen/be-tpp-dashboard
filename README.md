@@ -40,6 +40,7 @@ Smart Air Quality Control Dashboard - Multi-Device Management for BE-TPP SmartFl
 ## 📁 Files
 
 ```
+├── index.html          # Login page (PWA start)
 ├── dashboard.html      # Main application
 ├── manifest.json       # PWA manifest
 ├── sw.js              # Service Worker
@@ -54,7 +55,8 @@ Smart Air Quality Control Dashboard - Multi-Device Management for BE-TPP SmartFl
 ## 🌐 GitHub Pages
 
 This dashboard is hosted on GitHub Pages:
-- URL: `https://YOUR_USERNAME.github.io/be-tpp-dashboard/dashboard.html`
+- Login: `https://YOUR_USERNAME.github.io/be-tpp-dashboard/` or `index.html`
+- Dashboard: `https://YOUR_USERNAME.github.io/be-tpp-dashboard/dashboard.html`
 
 ## 📄 License
 
