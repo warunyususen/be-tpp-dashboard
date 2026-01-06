@@ -17,7 +17,8 @@ const STATIC_ASSETS = [
     './icon-192-maskable.png',
     './icon-512.png',
     './icon-512-maskable.png',
-    './apple-touch-icon.png'
+    './apple-touch-icon.png',
+    './BE_logo.svg'
 ];
 
 // External resources to cache
