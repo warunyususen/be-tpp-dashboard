@@ -57,6 +57,13 @@
             "description": "View all devices",
             "url": "./dashboard.html#monitor",
             "icons": [{ "src": "./icon-192.png", "sizes": "192x192" }]
+        },
+        {
+            "name": "History",
+            "short_name": "History",
+            "description": "View historical data",
+            "url": "./dashboard.html#history",
+            "icons": [{ "src": "./icon-192.png", "sizes": "192x192" }]
         }
     ],
     "prefer_related_applications": false

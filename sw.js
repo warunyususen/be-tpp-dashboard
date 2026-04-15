@@ -3,8 +3,8 @@
    Phase 12: Offline Support
    ============================================ */
 
-const CACHE_NAME = 'be-tpp-v1.1.0';
-const CACHE_VERSION = '1.1.0';
+const CACHE_NAME = 'be-tpp-v2.8.0';
+const CACHE_VERSION = '2.8.0';
 
 // Static assets to cache (relative paths for GitHub Pages compatibility)
 const STATIC_ASSETS = [
@@ -25,7 +25,8 @@ const STATIC_ASSETS = [
 const EXTERNAL_ASSETS = [
     'https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap',
     'https://unpkg.com/mqtt/dist/mqtt.min.js',
-    'https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js'
+    'https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js',
+    'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js'
 ];
 
 // Install event - cache static assets
@@ -105,7 +106,7 @@ self.addEventListener('fetch', event => {
     }
     
     // Network-first strategy for API calls and dynamic content
-    if (url.pathname.includes('/api/') || url.hostname.includes('emqx')) {
+    if (url.pathname.includes('/api/') || url.hostname.includes('emqx') || url.hostname.includes('supabase.co')) {
         event.respondWith(networkFirst(request));
         return;
     }
