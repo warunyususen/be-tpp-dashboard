@@ -3,8 +3,8 @@
    Phase 12: Offline Support
    ============================================ */
 
-const CACHE_NAME = 'be-tpp-v2.8.0';
-const CACHE_VERSION = '2.8.0';
+const CACHE_NAME = 'be-tpp-v2.11.2';
+const CACHE_VERSION = '2.11.2';
 
 // Static assets to cache (relative paths for GitHub Pages compatibility)
 const STATIC_ASSETS = [
