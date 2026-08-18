@@ -3,8 +3,8 @@
    Phase 12: Offline Support
    ============================================ */
 
-const CACHE_NAME = 'be-tpp-v2.11.2';
-const CACHE_VERSION = '2.11.2';
+const CACHE_NAME = 'be-tpp-v2.15.0';
+const CACHE_VERSION = '2.15.0';
 
 // Static assets to cache (relative paths for GitHub Pages compatibility)
 const STATIC_ASSETS = [
@@ -123,7 +123,10 @@ async function cacheFirst(request) {
         if (cachedResponse) {
             // Return cached version
             // Also update cache in background (stale-while-revalidate)
-            fetchAndCache(request);
+            // R5.3 FIX: background revalidate ไม่มีใคร await -> ถ้า fetch ล้ม (ออฟไลน์/โดนบล็อก)
+            //           จะกลายเป็น "Uncaught (in promise) TypeError: Failed to fetch" ใน console
+            //           ตัวนี้ไม่กระทบผู้ใช้ (ได้ของจาก cache อยู่แล้ว) จึงกลืน error ทิ้ง
+            fetchAndCache(request).catch(() => { /* background update failed - ใช้ cache ต่อได้ */ });
             return cachedResponse;
         }
         
